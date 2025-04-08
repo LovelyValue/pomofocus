@@ -1,7 +1,7 @@
-import styles from './Layout.module.css';
+import styles from './Pomodoro.module.css';
 
-const Layout = () => {
-	return <div className={styles['Layout']}>Layout</div>;
+const Pomodoro = () => {
+	return <div className={styles['Pomodoro']}>Pomodoro</div>;
 };
 
-export default Layout;
+export default Pomodoro;
