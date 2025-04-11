@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router';
 import Layout from './Layouts/Layout';
 import './main.css';
+import Error from './pages/Error/Error';
 import LongBreak from './pages/LongBreak/LongBreak';
 import Pomodoro from './pages/Pomodoro/Pomodoro';
 import ShortBreak from './pages/ShortBreak/ShortBreak';
@@ -13,7 +14,7 @@ const router = createBrowserRouter([
 		element: <Layout />,
 		children: [
 			{
-				path: '/pomodoro',
+				path: '/',
 				element: <Pomodoro />,
 			},
 			{
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
 				element: <LongBreak />,
 			},
 		],
+	},
+	{
+		path: '*',
+		element: <Error />,
 	},
 ]);
 
