@@ -1,14 +1,61 @@
-import { NavLink } from 'react-router-dom';
+import cn from 'classnames';
+import { useState } from 'react';
+import { NavLink, Outlet } from 'react-router-dom';
 import styles from './Layout.module.css';
 
 const Layout = () => {
+	//Управление изменением текста кнопки
+	const [buttonText, setButtonText] = useState('Start');
+	const changeText = (text: string) => {
+		if (text !== 'Start') {
+			setButtonText('Start');
+		} else {
+			setButtonText('Pause');
+		}
+	};
+
 	return (
 		<div className={styles['layout']}>
-			<div className={styles['inner__link']}>
-				<NavLink to='/'>Pomodoro</NavLink>
-				<NavLink to='/short-break'>Short Break</NavLink>
-				<NavLink to='/long-break'>Long Break</NavLink>
+			<div className={styles['layout__inner-link']}>
+				<NavLink
+					to='/'
+					className={({ isActive }) =>
+						cn(styles['layout__link'], {
+							[styles['active']]: isActive,
+						})
+					}
+				>
+					Pomodoro
+				</NavLink>
+				<NavLink
+					to='/short-break'
+					className={({ isActive }) =>
+						cn(styles['layout__link'], {
+							[styles['active']]: isActive,
+						})
+					}
+				>
+					Short Break
+				</NavLink>
+				<NavLink
+					to='/long-break'
+					className={({ isActive }) =>
+						cn(styles['layout__link'], {
+							[styles['active']]: isActive,
+						})
+					}
+				>
+					Long Break
+				</NavLink>
 			</div>
+			<Outlet />
+			<button
+				type='button'
+				className={styles['layout__button']}
+				onClick={() => changeText(buttonText)}
+			>
+				{buttonText}
+			</button>
 		</div>
 	);
 };
