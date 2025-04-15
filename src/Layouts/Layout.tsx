@@ -49,13 +49,23 @@ const Layout = () => {
 				</NavLink>
 			</div>
 			<Outlet />
-			<button
-				type='button'
-				className={styles['layout__button']}
-				onClick={() => changeText(buttonText)}
-			>
-				{buttonText}
-			</button>
+			<div className={styles['layout__inner-button']}>
+				<button
+					type='button'
+					className={styles['layout__button']}
+					onClick={() => changeText(buttonText)}
+				>
+					{buttonText}
+				</button>
+				<button
+					type='button'
+					className={cn(styles['hidden__button'], {
+						[styles['show_button']]: buttonText === 'Pause',
+					})}
+				>
+					<img src='public\next-button.svg' alt='next' />
+				</button>
+			</div>
 		</div>
 	);
 };
