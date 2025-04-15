@@ -1,6 +1,6 @@
 import cn from 'classnames';
-import { useState } from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import styles from './Layout.module.css';
 
 const Layout = () => {
@@ -13,6 +13,12 @@ const Layout = () => {
 			setButtonText('Pause');
 		}
 	};
+
+	//Изменение текста кнопки при переключение страницы
+	const location = useLocation();
+	useEffect(() => {
+		setButtonText('Start');
+	}, [location]);
 
 	return (
 		<div className={styles['layout']}>
