@@ -1,7 +1,7 @@
-import styles from './Pomodoro.module.css';
+import Timer from '../../components/Timer/Timer';
 
 const Pomodoro = () => {
-	return <div className={styles['pomodoro']}>25:00</div>;
+	return <Timer initialSeconds={60} />;
 };
 
 export default Pomodoro;
