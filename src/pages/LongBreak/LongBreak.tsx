@@ -1,7 +1,7 @@
-import styles from './LongBreak.module.css';
+import Timer from '../../components/Timer/Timer';
 
 const LongBreak = () => {
-	return <div className={styles['longBreak']}>15:00</div>;
+	return <Timer initialSeconds={900} />;
 };
 
 export default LongBreak;

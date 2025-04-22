@@ -1,7 +1,7 @@
-import styles from './ShortBreak.module.css';
+import Timer from '../../components/Timer/Timer';
 
 const ShortBreak = () => {
-	return <div className={styles['shortBreak']}>05:00</div>;
+	return <Timer initialSeconds={300} />;
 };
 
 export default ShortBreak;

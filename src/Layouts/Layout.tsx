@@ -67,7 +67,9 @@ const Layout = () => {
 					Long Break
 				</NavLink>
 			</div>
-			<Outlet />
+
+			<Outlet context={[setButtonText, buttonText]} />
+
 			<div className={styles['layout__inner-button']}>
 				<button
 					type='button'
