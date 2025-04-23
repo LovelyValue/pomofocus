@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import styles from './Timer.module.css';
+import { TimerContextType, TimerProps } from './Timer.props';
 
-const Timer = ({ initialSeconds }) => {
-	const [setButtonText, buttonText] = useOutletContext();
+const Timer: React.FC<TimerProps> = ({ initialSeconds }) => {
+	//Управление таймером
+	const { setButtonText, buttonText } = useOutletContext<TimerContextType>();
 	const [time, setTime] = useState(initialSeconds);
 
 	useEffect(() => {
@@ -16,10 +18,10 @@ const Timer = ({ initialSeconds }) => {
 				clearInterval(timerId);
 			};
 		} else if (time === 0 && buttonText !== 'Start') {
-			setTime(30);
+			setTime(initialSeconds);
 			setButtonText('Start');
 		}
-	}, [time, buttonText, setButtonText]);
+	}, [time, buttonText, setButtonText, initialSeconds]);
 
 	//Перевод времени в минуты и секунды
 	const minutes = Math.floor(time / 60)

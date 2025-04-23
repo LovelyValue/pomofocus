@@ -8,6 +8,7 @@ import LongBreak from './pages/LongBreak/LongBreak';
 import Pomodoro from './pages/Pomodoro/Pomodoro';
 import ShortBreak from './pages/ShortBreak/ShortBreak';
 
+//Роутинг
 const router = createBrowserRouter([
 	{
 		path: '/',

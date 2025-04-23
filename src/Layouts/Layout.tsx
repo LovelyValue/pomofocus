@@ -68,7 +68,7 @@ const Layout = () => {
 				</NavLink>
 			</div>
 
-			<Outlet context={[setButtonText, buttonText]} />
+			<Outlet context={{ buttonText, setButtonText }} />
 
 			<div className={styles['layout__inner-button']}>
 				<button
@@ -79,7 +79,7 @@ const Layout = () => {
 					{buttonText}
 				</button>
 				<button
-					onClick={() => navigate(changeLink(links), { replace: false })}
+					onClick={() => navigate(changeLink(links) ?? '/', { replace: false })}
 					type='button'
 					className={cn(styles['hidden__button'], {
 						[styles['show_button']]: buttonText === 'Pause',
