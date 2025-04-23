@@ -1,6 +1,8 @@
 import cn from 'classnames';
 import { useEffect, useState } from 'react';
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
+import Modal from '../components/Modal/Modal';
+import { useModalState } from '../hooks/useModalState';
 import styles from './Layout.module.css';
 
 const Layout = () => {
@@ -31,6 +33,12 @@ const Layout = () => {
 		} else if (link[2] === location.pathname) {
 			return link[0];
 		}
+	};
+
+	//Управление модальным окном
+	const { isOpen, onToggle } = useModalState();
+	const handleClick = () => {
+		onToggle();
 	};
 
 	return (
@@ -82,12 +90,20 @@ const Layout = () => {
 					onClick={() => navigate(changeLink(links) ?? '/', { replace: false })}
 					type='button'
 					className={cn(styles['hidden__button'], {
-						[styles['show_button']]: buttonText === 'Pause',
+						[styles['show__button']]: buttonText === 'Pause',
 					})}
 				>
 					<img src='public\next-button.svg' alt='next' />
 				</button>
 			</div>
+			<Modal open={isOpen} />
+			<button
+				type='button'
+				className={styles['settings-button']}
+				onClick={handleClick}
+			>
+				<img src='public\settings-button.svg' alt='settings' />
+			</button>
 		</div>
 	);
 };

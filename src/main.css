@@ -1,6 +1,7 @@
 :root {
 	color: rgba(255, 255, 255, 0.87);
 	background-color: #be5252;
+	font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 #root {
@@ -14,7 +15,9 @@ a {
 
 body {
 	margin: 0;
+	padding: 0;
+	height: 100vh;
 	display: flex;
 	place-items: center;
-	min-height: 100vh;
+	overflow: hidden;
 }

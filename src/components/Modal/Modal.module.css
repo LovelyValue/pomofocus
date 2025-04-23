@@ -1,0 +1,17 @@
+.hidden__div {
+	display: none;
+}
+.show__div {
+	display: block;
+	width: 300px;
+	height: 400px;
+	background-color: rgba(255, 255, 255, 0.1);
+	border-radius: 6px;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	gap: 60px;
+	position: absolute;
+	bottom: 0%;
+	right: -65%;
+}
