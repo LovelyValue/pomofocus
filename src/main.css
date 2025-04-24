@@ -21,3 +21,27 @@ body {
 	place-items: center;
 	overflow: hidden;
 }
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+p {
+	margin: 0;
+}
+
+input {
+	border: none;
+}
+
+input:focus {
+	outline: none;
+}
+
+button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+}

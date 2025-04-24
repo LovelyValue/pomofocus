@@ -17,7 +17,7 @@
 
 .layout__link {
 	font-size: 25px;
-	color: #ffffff;
+	color: rgba(255, 255, 255, 0.87);
 	padding: 7px;
 }
 
@@ -33,13 +33,11 @@
 }
 
 .layout__button {
-	cursor: pointer;
 	width: 200px;
 	height: 50px;
 	font-size: 25px;
 	color: #000000;
 	background: #ffffff;
-	border: none;
 	border-radius: 6px;
 	margin-left: 17px;
 }
@@ -50,9 +48,6 @@
 
 .show__button {
 	display: inline;
-	background: none;
-	border: none;
-	cursor: pointer;
 	margin-top: 4px;
 }
 
@@ -63,14 +58,11 @@
 }
 
 .settings-button {
-	cursor: pointer;
-	width: 45px;
-	height: 45px;
+	width: 32px;
+	height: 32px;
 	padding: 0;
-	border: none;
 	border-radius: 6px;
-	background: none;
 	position: absolute;
-	bottom: 0%;
-	right: 0%;
+	bottom: 10px;
+	right: 10px;
 }

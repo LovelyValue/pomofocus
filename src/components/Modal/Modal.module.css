@@ -3,15 +3,68 @@
 }
 .show__div {
 	display: block;
-	width: 300px;
+	width: 250px;
 	height: 400px;
 	background-color: rgba(255, 255, 255, 0.1);
 	border-radius: 6px;
 	padding: 30px;
 	display: flex;
 	flex-direction: column;
-	gap: 60px;
 	position: absolute;
 	bottom: 0%;
-	right: -65%;
+	right: -56%;
+}
+
+.modal__title {
+	font-size: 25px;
+	margin: 0;
+	padding: 7px;
+}
+.modal__list {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.modal__paragraph {
+	font-size: 20px;
+	margin-bottom: 5px;
+	text-align: start;
+}
+.modal__input {
+	border-radius: 6px;
+	padding: 6px;
+}
+
+.modal__button {
+	width: 200px;
+	height: 50px;
+	font-size: 25px;
+	color: #000000;
+	background: #ffffff;
+	border-radius: 6px;
+	margin: 37px auto 0;
+}
+
+.modal__input-inner {
+	display: flex;
+	justify-content: space-between;
+}
+
+.modal__list-button img {
+	width: 25px;
+	height: 25px;
+}
+
+.modal__button-close {
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+
+.modal__button-close img {
+	width: 25px;
+	height: 25px;
 }
