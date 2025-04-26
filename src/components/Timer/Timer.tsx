@@ -8,6 +8,11 @@ const Timer: React.FC<TimerProps> = ({ initialSeconds }) => {
 	const { setButtonText, buttonText } = useOutletContext<TimerContextType>();
 	const [time, setTime] = useState(initialSeconds);
 
+	//Обновление приходящего времени
+	useEffect(() => {
+		setTime(initialSeconds);
+	}, [initialSeconds]);
+
 	useEffect(() => {
 		if (time > 0 && buttonText === 'Pause') {
 			const timerId = setInterval(() => {

@@ -46,7 +46,7 @@
 	margin: 37px auto 0;
 }
 
-.modal__input-inner {
+.modal__form {
 	display: flex;
 	justify-content: space-between;
 }

@@ -36,7 +36,7 @@ const Layout = () => {
 	};
 
 	//Управление модальным окном
-	const { isOpen, onToggle } = useModalState();
+	const { isOpen, onToggle, onClose } = useModalState();
 	const handleClick = () => {
 		onToggle();
 	};
@@ -96,7 +96,7 @@ const Layout = () => {
 					<img src='public\next-button.svg' alt='next' />
 				</button>
 			</div>
-			<Modal open={isOpen} />
+			<Modal open={isOpen} close={onClose} />
 			<button
 				type='button'
 				className={styles['settings-button']}
