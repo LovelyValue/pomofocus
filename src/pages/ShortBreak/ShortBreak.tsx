@@ -4,9 +4,7 @@ import { localStorageGet } from '../../hooks/localStorage';
 
 const ShortBreak = () => {
 	//Обновление приходящих данных с localStorage
-	const [time, setTime] = useState(
-		() => localStorageGet('short-break') ?? 1500
-	);
+	const [time, setTime] = useState(() => localStorageGet('short-break') ?? 300);
 
 	useEffect(() => {
 		const interval = setInterval(() => {
