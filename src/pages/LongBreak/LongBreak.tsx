@@ -3,6 +3,7 @@ import Timer from '../../components/Timer/Timer';
 import { localStorageGet } from '../../hooks/localStorage';
 
 const LongBreak = () => {
+	//Обновление приходящих данных с localStorage
 	const [time, setTime] = useState(() => localStorageGet('long-break') ?? 900);
 
 	useEffect(() => {

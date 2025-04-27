@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import { TimerContextType, TimerProps } from './Timer.interface';
 import styles from './Timer.module.css';
-import { TimerContextType, TimerProps } from './Timer.props';
 
 const Timer: React.FC<TimerProps> = ({ initialSeconds }) => {
-	//Управление таймером
-	const { setButtonText, buttonText } = useOutletContext<TimerContextType>();
-	const [time, setTime] = useState(initialSeconds);
-
 	//Обновление приходящего времени
 	useEffect(() => {
 		setTime(initialSeconds);
 	}, [initialSeconds]);
+
+	//Управление таймером
+	const { setButtonText, buttonText } = useOutletContext<TimerContextType>();
+	const [time, setTime] = useState(initialSeconds);
 
 	useEffect(() => {
 		if (time > 0 && buttonText === 'Pause') {

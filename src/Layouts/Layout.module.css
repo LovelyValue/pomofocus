@@ -15,6 +15,12 @@
 	justify-content: space-around;
 }
 
+.layout__inner-button {
+	display: grid;
+	grid-template-columns: 200px 35px;
+	justify-content: center;
+}
+
 .layout__link {
 	font-size: 25px;
 	color: rgba(255, 255, 255, 0.87);
@@ -24,12 +30,6 @@
 .active {
 	border-radius: 6px;
 	background: none rgba(0, 0, 0, 0.15);
-}
-
-.layout__inner-button {
-	display: grid;
-	grid-template-columns: 200px 35px;
-	justify-content: center;
 }
 
 .layout__button {
@@ -42,22 +42,22 @@
 	margin-left: 17px;
 }
 
-.hidden__button {
+.button--hidden {
 	display: none;
 }
 
-.show__button {
+.button--show {
 	display: inline;
 	margin-top: 4px;
 }
 
-.show__button img {
+.button--show img {
 	width: 35px;
 	height: 35px;
 	margin-left: 30px;
 }
 
-.settings-button {
+.layout__button-settings {
 	width: 32px;
 	height: 32px;
 	padding: 0;

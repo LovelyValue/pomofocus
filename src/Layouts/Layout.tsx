@@ -89,17 +89,17 @@ const Layout = () => {
 				<button
 					onClick={() => navigate(changeLink(links) ?? '/', { replace: false })}
 					type='button'
-					className={cn(styles['hidden__button'], {
-						[styles['show__button']]: buttonText === 'Pause',
+					className={cn(styles['button--hidden'], {
+						[styles['button--show']]: buttonText === 'Pause',
 					})}
 				>
 					<img src='public\next-button.svg' alt='next' />
 				</button>
 			</div>
-			<Modal open={isOpen} close={onClose} />
+			<Modal isOpen={isOpen} onClose={onClose} />
 			<button
 				type='button'
-				className={styles['settings-button']}
+				className={styles['layout__button-settings']}
 				onClick={handleClick}
 			>
 				<img src='public\settings-button.svg' alt='settings' />
