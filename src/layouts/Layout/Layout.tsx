@@ -1,8 +1,8 @@
 import cn from 'classnames';
 import { useEffect, useState } from 'react';
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
-import Modal from '../components/Modal/Modal';
-import { useModalState } from '../hooks/useModalState';
+import Modal from '../../components/Modal/Modal';
+import { useModalState } from '../../hooks/useModalState';
 import styles from './Layout.module.css';
 
 const Layout = () => {

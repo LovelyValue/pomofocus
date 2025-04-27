@@ -23,7 +23,7 @@
 
 .layout__link {
 	font-size: 25px;
-	color: rgba(255, 255, 255, 0.87);
+	color: rgba(0, 0, 0, 0.87);
 	padding: 7px;
 }
 
@@ -37,7 +37,7 @@
 	height: 50px;
 	font-size: 25px;
 	color: #000000;
-	background: #ffffff;
+	background: rgba(0, 0, 0, 0.15);
 	border-radius: 6px;
 	margin-left: 17px;
 }

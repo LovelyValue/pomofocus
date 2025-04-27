@@ -34,7 +34,7 @@
 	height: 50px;
 	font-size: 25px;
 	color: #000000;
-	background: #ffffff;
+	background: rgba(0, 0, 0, 0.15);
 	border-radius: 6px;
 	margin: 37px auto 0;
 }
@@ -66,6 +66,7 @@
 .modal__list-input {
 	border-radius: 6px;
 	padding: 6px;
+	font-family: 'Wolgadeutsche';
 }
 
 .modal__list-button img {

@@ -114,7 +114,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 					</label>
 					<form className={styles['modal__list-form']}>
 						<input
-							className={styles['modal__input']}
+							className={styles['modal__list-input']}
 							name='long-break'
 							id='3'
 							type='number'
