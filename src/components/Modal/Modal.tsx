@@ -10,8 +10,8 @@ import styles from './Modal.module.css';
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 	//Получение input со страницы
 	const pomodor = document.getElementById('1') as HTMLInputElement | null;
-	const shortBrake = document.getElementById('2') as HTMLInputElement | null;
-	const longBrake = document.getElementById('3') as HTMLInputElement | null;
+	const shortBreak = document.getElementById('2') as HTMLInputElement | null;
+	const longBreak = document.getElementById('3') as HTMLInputElement | null;
 
 	//Установка значение в localStorage из input
 	const setLocalStorage = ({ e, inputName }: SetLocalStorageParams) => {
@@ -34,6 +34,14 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 		}
 	};
 
+	// Полный сброс localStorage
+	const fullResetLocalStorage = () => {
+		localStorage.clear();
+		if (pomodor) pomodor.value = '';
+		if (shortBreak) shortBreak.value = '';
+		if (longBreak) longBreak.value = '';
+	};
+
 	return (
 		<div
 			className={cn(styles['modal--hidden'], {
@@ -45,10 +53,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 				className={styles['modal__button-close']}
 				onClick={onClose}
 			>
-				<img src='public\close-button.svg' alt='close' />
+				<img src='public/icons/close-button.svg' alt='close' />
 			</button>
 			<p className={styles['modal__title']}>Set Time</p>
 			<ul className={styles['modal__list']}>
+				{/* Pomodoro */}
 				<li>
 					<label htmlFor='1' className={styles['modal__list-label']}>
 						Pomodor
@@ -65,7 +74,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 							type='submit'
 							onClick={e => setLocalStorage({ e, inputName: pomodor })}
 						>
-							<img src='public/check-button.svg' alt='check' />
+							<img src='public/icons/check-button.svg' alt='check' />
 						</button>
 
 						<button
@@ -75,13 +84,14 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 								resetLocalStorage({ e, inputName: pomodor, value: 1500 })
 							}
 						>
-							<img src='public\reset-button.svg' alt='reset' />
+							<img src='public/icons/reset-button.svg' alt='reset' />
 						</button>
 					</form>
 				</li>
+				{/* Short Break */}
 				<li>
 					<label htmlFor='2' className={styles['modal__list-label']}>
-						Short Brake
+						Short Break
 					</label>
 					<form className={styles['modal__list-form']}>
 						<input
@@ -93,21 +103,22 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 						<button
 							className={styles['modal__list-button']}
 							type='submit'
-							onClick={e => setLocalStorage({ e, inputName: shortBrake })}
+							onClick={e => setLocalStorage({ e, inputName: shortBreak })}
 						>
-							<img src='public\check-button.svg' alt='check' />
+							<img src='public/icons/check-button.svg' alt='check' />
 						</button>
 						<button
 							className={styles['modal__list-button']}
 							type='submit'
 							onClick={e =>
-								resetLocalStorage({ e, inputName: shortBrake, value: 300 })
+								resetLocalStorage({ e, inputName: shortBreak, value: 300 })
 							}
 						>
-							<img src='public\reset-button.svg' alt='reset' />
+							<img src='public/icons/reset-button.svg' alt='reset' />
 						</button>
 					</form>
 				</li>
+				{/* long Break */}
 				<li>
 					<label htmlFor='3' className={styles['modal__list-label']}>
 						Long Break
@@ -122,31 +133,27 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 						<button
 							className={styles['modal__list-button']}
 							type='submit'
-							onClick={e => setLocalStorage({ e, inputName: longBrake })}
+							onClick={e => setLocalStorage({ e, inputName: longBreak })}
 						>
-							<img src='public\check-button.svg' alt='check' />
+							<img src='public/icons/check-button.svg' alt='check' />
 						</button>
 						<button
 							className={styles['modal__list-button']}
 							type='submit'
 							onClick={e =>
-								resetLocalStorage({ e, inputName: longBrake, value: 900 })
+								resetLocalStorage({ e, inputName: longBreak, value: 900 })
 							}
 						>
-							<img src='public\reset-button.svg' alt='reset' />
+							<img src='public/icons/reset-button.svg' alt='reset' />
 						</button>
 					</form>
 				</li>
 			</ul>
+			{/* Reset */}
 			<button
 				className={styles['modal__button-reset']}
 				type='button'
-				onClick={() => {
-					localStorage.clear();
-					if (pomodor) pomodor.value = '';
-					if (shortBrake) shortBrake.value = '';
-					if (longBrake) longBrake.value = '';
-				}}
+				onClick={fullResetLocalStorage}
 			>
 				Reset
 			</button>

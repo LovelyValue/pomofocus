@@ -9,13 +9,12 @@ const ShortBreak = () => {
 	useEffect(() => {
 		const interval = setInterval(() => {
 			const newTime = localStorageGet('short-break');
-			if (newTime !== time) {
-				setTime(newTime ?? 300);
-			}
+			setTime(prevTime => (newTime !== prevTime ? newTime ?? 300 : prevTime));
 		}, 500);
 
 		return () => clearInterval(interval);
-	}, [time]);
+	}, []);
+
 	return <Timer initialSeconds={time} />;
 };
 

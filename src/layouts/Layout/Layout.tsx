@@ -93,7 +93,7 @@ const Layout = () => {
 						[styles['button--show']]: buttonText === 'Pause',
 					})}
 				>
-					<img src='public\next-button.svg' alt='next' />
+					<img src='public/icons/next-button.svg' alt='next' />
 				</button>
 			</div>
 			<Modal isOpen={isOpen} onClose={onClose} />
@@ -102,7 +102,7 @@ const Layout = () => {
 				className={styles['layout__button-settings']}
 				onClick={handleClick}
 			>
-				<img src='public\settings-button.svg' alt='settings' />
+				<img src='public/icons/settings-button.svg' alt='settings' />
 			</button>
 		</div>
 	);

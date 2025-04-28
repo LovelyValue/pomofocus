@@ -9,13 +9,11 @@ const Pomodoro = () => {
 	useEffect(() => {
 		const interval = setInterval(() => {
 			const newTime = localStorageGet('pomodor');
-			if (newTime !== time) {
-				setTime(newTime ?? 1500);
-			}
+			setTime(prevTime => (newTime !== prevTime ? newTime ?? 1500 : prevTime));
 		}, 500);
 
 		return () => clearInterval(interval);
-	}, [time]);
+	}, []);
 
 	return <Timer initialSeconds={time} />;
 };

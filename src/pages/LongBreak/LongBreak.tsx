@@ -9,13 +9,12 @@ const LongBreak = () => {
 	useEffect(() => {
 		const interval = setInterval(() => {
 			const newTime = localStorageGet('long-break');
-			if (newTime !== time) {
-				setTime(newTime ?? 900);
-			}
+			setTime(prevTime => (newTime !== prevTime ? newTime ?? 900 : prevTime));
 		}, 500);
 
 		return () => clearInterval(interval);
-	}, [time]);
+	}, []);
+
 	return <Timer initialSeconds={time} />;
 };
 
